@@ -10,6 +10,13 @@ IO.puts("this is a => #{a}, this is b => #{b}")
 
 IO.puts("this is c => #{c}")
 
+# |> operator
+
+[1, [2], 3] |> List.flatten()
+[1, [2], 3] |> List.flatten |> Enum.map(fn x -> x * 2 end)
+
+# Comprehensions http://elixir-lang.org/getting-started/comprehensions.html
+
 # Functions & modules
 
 Enum.map([1, 2, 3], fn(x) -> x * 2 end)
@@ -45,8 +52,6 @@ and_another_4 = &SimpleMath.add_2(&1) # fn x -> SimpleMath.add_2(x) end
 IO.puts("guess answer? #{add_4}")
 IO.puts("surprise! #{another_add_4}")
 IO.puts("wow! #{and_another_4.(2)}")
-
-# |> operator
 
 defmodule SimpleStrings do
   def hello(a, b \\ "world") do
